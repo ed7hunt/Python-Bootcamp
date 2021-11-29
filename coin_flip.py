@@ -10,6 +10,6 @@ random.seed(test_seed)
 
 # Write your code below this line 👇
 
-output_list = ("Tails", "Heads")
+output_list = ["Tails", "Heads"]
 flip = random.randint(0, 1)
 print(output_list[flip])
