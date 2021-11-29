@@ -65,3 +65,6 @@ elif choice == 2:
     # paper
     else:
         print(f"{outcome[2]}\n {outcome[1]}\nYou win!")
+else:
+    print("You picked an invalid number. You Lose!")
+    
