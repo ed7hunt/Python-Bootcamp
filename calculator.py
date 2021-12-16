@@ -1,54 +1,46 @@
 # Calculator
-def addition(x, y):
-    return x + y
+def addition(n1, n2):
+    return n1 + n2
 
 
-def subtraction(x, y):
-    return x - y
+def subtraction(n1, n2):
+    return n1 - n2
 
 
-def multiplication(x, y):
-    return x * y
+def multiplication(n1, n2):
+    return n1 * n2
 
 
-def division(x, y):
-    return x / y
+def division(n1, n2):
+    return n1 / n2
 
 
-def main():
-    print("""
-Welcome to Calculator!
-+
--
-*
-/
-""")
-    z = True
-    while z:
-        z = False
-        function = input("Select your function: ")
-        char_one = float(input("What is x? "))
-        char_two = float(input("What is y? "))
-        if function == "+":
-            result = addition(x=char_one, y=char_two)
-        elif function == "-":
-            result = subtraction(x=char_one, y=char_two)
-        elif function == "*":
-            result = multiplication(x=char_one, y=char_two)
-        elif function == "/":
-            result = division(x=char_one, y=char_two)
+operations = {
+    "+": addition,
+    "-": subtraction,
+    "*": multiplication,
+    "/": division
+}
+
+
+def calculator():
+    num1 = float(input("What is the first number?: "))
+    for symbol in operations:
+        print(symbol)
+    should_continue = True
+    while should_continue:
+        operation_symbol = input("Select your function: ")
+        num2 = float(input("What is the next number?: "))
+        calculation_function = operations[operation_symbol]
+        answer = calculation_function(n1=num1, n2=num2)
+
+        print(f"{num1} {operation_symbol} {num2} = {answer}")
+
+        if (input(f"Type 'Y' to continue calculation with {answer} or type 'N' to start over? Y/N ")).lower() == "y":
+            num1 = answer
         else:
-            z = True
-            print("You entered an invalid function. Try again.")
-    print(f"{char_one} {function} {char_two} = {result}")
-    answer = input("Would you like to do another? Y/N ")
-    if answer.lower() == "y":
-        finish = False
-    else:
-        finish = True
-    return finish
+            should_continue = False
+            calculator()
 
 
-finished = False
-while not finished:
-    finished = main()
+calculator()
