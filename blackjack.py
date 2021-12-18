@@ -1,6 +1,11 @@
 from blackjack_art import logo
 import random
 
+#   Name: Black Jack
+# Author: Edward Hunt
+#   Date: 12/18/2021
+
+# here are the card choices
 cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
 
 
