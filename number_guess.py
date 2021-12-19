@@ -4,7 +4,7 @@ from number_guess_art import logo
 
 # globals
 max_number = 100
-magic_number = random.randint(0, max_number)
+magic_number = random.randint(1, max_number)
 
 
 def get_number_of_guesses(level):
@@ -29,7 +29,7 @@ def main():
     guesses = get_number_of_guesses(lev)
     out_of_guesses = False
     your_guess = int()
-    print(f"You have {guesses} guesses total. The number is between one {max_number}.")
+    print(f"You have {guesses} guesses total. The number is between 1 and {max_number}.")
     while (not out_of_guesses) and your_guess != magic_number:
         your_guess = int(input("Choose a number: "))
         guesses -= 1
