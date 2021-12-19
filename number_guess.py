@@ -1,4 +1,5 @@
 import random
+# http://patorjk.com/software/taag/#p=display&f=Graffiti&t=Type%20Something%20
 from number_guess_art import logo
 
 # globals
