@@ -63,7 +63,7 @@ def main():
         user_sum = sum(user)
         dealer_sum = sum(dealer)
         print(f"   You: {user} = {user_sum}")
-        print(f"Dealer: {dealer} = {dealer_sum}")
+        print(f"Dealer: [X, {dealer[0]}]")
         if check_blackjack(dealer) and check_blackjack(user):
             print("Game is a DRAW!")
             return
