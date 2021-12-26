@@ -34,20 +34,20 @@ def generate():
     uppers = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
     password = ""
     for a in range(random.randint(special_char_min_total, special_char_max_total)):
-        special_char = special_characters[random.randint(0, len(special_characters)-1)]
+        special_char = random.choice(special_characters)
         # print(f"special char {(a + 1)}: {special_char}")
         password += special_char
     for b in range(random.randint(number_min_total, number_max_total)):
-        number = numbers[random.randint(0, len(numbers)-1)]
+        number = random.choice(numbers)
         # print(f"      number {(b + 1)}: {number}")
         password += number
     for c in range(random.randint(upper_min_total, upper_max_total)):
-        upper = uppers[random.randint(0, len(uppers)-1)]
+        upper = random.choice(uppers)
         # print(f"       upper {(c + 1)}: {upper}")
         password += upper
     for d in range(len(password), password_length):
-        next_letter_index = random.randrange(len(alphabet))
-        password += alphabet[next_letter_index]
+        next_letter_index = random.choice(alphabet)
+        password += next_letter_index
     password_list = list(password)
     random.shuffle(password_list)
     password_result = (''.join(password_list))
